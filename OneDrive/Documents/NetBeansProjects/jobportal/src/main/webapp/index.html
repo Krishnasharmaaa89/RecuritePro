@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Job Portal - Find Your Dream Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* DRDO-inspired color palette */
+            --drdo-teal: #005a5a;
+            --drdo-dark-teal: #004444;
+            --drdo-bg-light: #f4f7f7;
+            --drdo-text: #333333;
+        }
+
+        /* Prevent horizontal movement/shifting */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: 'Public Sans', sans-serif; 
+            color: var(--drdo-text);
+            background-color: #ffffff;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #ffffff !important;
+            border-bottom: 1px solid #dee2e6;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 10;
+        }
+        .navbar-brand {
+            color: var(--drdo-teal) !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .nav-link {
+            color: #555 !important;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: var(--drdo-teal) !important;
+        }
+
+        /* Static Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #005a5a 0%, #003d3d 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            /* Ensures content stays centered without shifting */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Card Styling - Fixed Shadow to prevent jitter */
+        .card {
+            border: none;
+            border-top: 4px solid var(--drdo-teal);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            background: #fff;
+        }
+        
+        /* Subtle lift on hover without page displacement */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        /* Buttons */
+        .btn-light {
+            background-color: #ffffff;
+            color: var(--drdo-teal);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-light:hover {
+            background-color: var(--drdo-bg-light);
+            transform: scale(1.02);
+        }
+        .btn-outline-light:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Section Headings */
+        h2 {
+            color: var(--drdo-dark-teal);
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--drdo-teal);
+        }
+
+        /* Selection Process Steps */
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--drdo-teal);
+            color: white;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--drdo-dark-teal);
+            color: #ffffff;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        /* Icon Backgrounds */
+        .icon-circle {
+            background: var(--drdo-bg-light) !important;
+            color: var(--drdo-teal) !important;
+            border: 1px solid #e0eaea;
+            width: 70px;
+            height: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        /* Simple Fade-in for static stability */
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <i class="bi bi-shield-check"></i> VisionRecruit
+        </a>
+        <div class="ms-auto">
+            <ul class="navbar-nav flex-row gap-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" style="color: var(--drdo-teal) !important;" href="register">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+    
+    <section class="hero-section">
+    <div class="container">
+        <div class="animate-fade-in">
+            <h1>Vacancies</h1>
+            <p class="lead mb-4 opacity-75">AI-Powered Document Verification & Automated Interview Scheduling</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="register" class="btn btn-light btn-lg px-4 fw-semibold">
+                    <i class="bi bi-rocket-takeoff"></i> Get Started
+                </a>
+                <a href="login" class="btn btn-outline-light btn-lg px-4 text-white">
+                    <i class="bi bi-box-arrow-in-right"></i> Login
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+   
+<section class="py-5">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Why Choose SmartJobPortal?</h2>
+        <p class="text-center text-muted mb-5">Intelligent document processing and automated workflows</p>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="icon-circle">
+                        <i class="bi bi-search fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold">Smart Job Search</h5>
+                    <p class="text-muted small">Search and filter through hundreds of job openings. Find the perfect match for your skills.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="icon-circle">
+                        <i class="bi bi-file-earmark-check fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold">Document Verification</h5>
+                    <p class="text-muted small">Our system automatically extracts and verifies information against your official documents.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center p-4">
+                    <div class="icon-circle">
+                        <i class="bi bi-calendar-check fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold">Auto Scheduling</h5>
+                    <p class="text-muted small">Interviews are automatically scheduled upon shortlisting. Get notified instantly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-5">Selection Process</h2>
+        <div class="row g-4">
+            <div class="col-md-3 text-center">
+                <div class="step-circle">1</div>
+                <h6 class="fw-bold">Register</h6>
+                <p class="text-muted small">Create your complete profile.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="step-circle">2</div>
+                <h6 class="fw-bold">Verify</h6>
+                <p class="text-muted small">Upload certificates & identity.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="step-circle">3</div>
+                <h6 class="fw-bold">Apply</h6>
+                <p class="text-muted small">Browse and apply for roles.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="step-circle">4</div>
+                <h6 class="fw-bold">Interview</h6>
+                <p class="text-muted small">Attend automated schedules.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <hr>
+    <section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-5">"VisionRecruit: Engineering the Future of Merit-Based Hiring."</h2>
+        <p>VisionRecruit is a high-integrity recruitment management system designed for organizations where precision is paramount. By integrating advanced AI-driven OCR technology, we provide a seamless bridge between elite talent and specialized roles. Our platform automates the most rigorous stages of the hiring lifecycle—from document authentication to intelligent interview scheduling—ensuring that every selection is backed by verified excellence and zero administrative friction.</p>
+        </div>
+    </div>
+    <hr>
+</section>
+    <section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-5">"VisionRecruit: The Gold Standard in Secure Recruitment Management."</h2>
+        <p>Built on a foundation of transparency and security, VisionRecruit revolutionizes how professional credentials are authenticated. We utilize defense-grade verification protocols to cross-reference applicant data against official certifications, eliminating data mismatch and ensuring total integrity in the recruitment pipeline. Secure your future with a platform designed for accuracy, reliability, and technical merit.</p></div>
+    </div>
+    <hr>
+</section>
+    <section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-5"> "Smart Verification. Automated Scheduling. Your Career, Accelerated."</h2>
+        <p>Welcome to VisionRecruit, an intelligent recruitment ecosystem that puts technology to work for you. Say goodbye to manual data entry and long waiting periods. Our AI engine automatically extracts and verifies your credentials from uploaded documents, creating a high-trust digital profile instantly. With automated shortlisting and smart interview coordination, we ensure that the right opportunities find the right candidates in record time.</p>
+        </div>
+    </div>
+</section>
+    
+
+
+
+<footer class="footer text-center">
+    <div class="container">
+        <p class="mb-1 fw-bold">VisionRecruit</p>
+        <p class="small mb-0 opacity-75">An Intelligent Recruitment Management System</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
