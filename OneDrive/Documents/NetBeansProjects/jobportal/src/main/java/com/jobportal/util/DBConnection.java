@@ -15,7 +15,7 @@ public class DBConnection {
     // Database configuration - UPDATE THESE VALUES
     private static final String URL = "jdbc:mysql://localhost:3306/job_portal?useSSL=false&serverTimezone=UTC";
     private static final String USER = "root";
-    private static final String PASSWORD = "Avdhesh@2004"; // Change to your MySQL password
+    private static final String PASSWORD = "root"; // Change to your MySQL password
 
     /**
      * Returns a new connection to the MySQL database.
